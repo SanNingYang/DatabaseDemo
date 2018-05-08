@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/draw_dialog_shape"
+    android:gravity="center"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="30dp">
 
     <LinearLayout
+        android:id="@+id/update_name_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -20,7 +25,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/insert_name_edit"
+            android:id="@+id/update_name_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/draw_edit_shape"
@@ -31,8 +36,10 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/update_phone_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/update_name_group"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -45,60 +52,29 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/insert_phone_edit"
+            android:id="@+id/update_phone_edit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/draw_edit_shape"
             android:inputType="phone"
-            android:maxLines="1"
             android:paddingLeft="8dp"
+            android:maxLines="1"
             android:textSize="14sp" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/insert_button"
+        android:id="@+id/update_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/update_phone_group"
         android:layout_marginTop="10dp"
-        android:text="增加" />
+        android:text="修改" />
 
     <Button
-        android:id="@+id/query_all_button"
+        android:id="@+id/delete_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="查询所有" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/query_name_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/query_name_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="姓名查询" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="提示：点击条目进行修改和删除操作"
-        android:textSize="10sp" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/data_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:overScrollMode="never" />
-</LinearLayout>
+        android:layout_below="@id/update_button"
+        android:text="删除" />
+</RelativeLayout>
