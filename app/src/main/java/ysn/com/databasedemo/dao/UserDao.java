@@ -21,6 +21,12 @@ public interface UserDao {
     List<UserBean> getAllUser();
 
     /**
+     * @return 根据 phone 降序查询
+     */
+    @Query("SELECT * FROM USER ORDER BY phone desc")
+    List<UserBean> getAllUserByPhone();
+
+    /**
      * @param phone 手机号
      * @return 根据 phone 查询的结果
      */

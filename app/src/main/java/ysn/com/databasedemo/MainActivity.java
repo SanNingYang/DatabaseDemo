@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String mPhone = insertPhoneEdit.getText().toString();
         switch (v.getId()) {
             case R.id.query_all_button:
-                notifyItemChanged(RoomDatabaseHepler.getDefault(MyApplication.getInstance()).getUserDao().getAllUser());
+                notifyItemChanged(RoomDatabaseHepler.getDefault(MyApplication.getInstance()).getUserDao().getAllUserByPhone());
                 break;
             case R.id.query_name_button:
                 String name = queryNamePhoneEdit.getText().toString().trim();
